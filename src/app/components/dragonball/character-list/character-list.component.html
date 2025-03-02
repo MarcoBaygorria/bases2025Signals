@@ -1,0 +1,18 @@
+<h3>{{listName()}}</h3>
+        <ul>
+            @for (character of characters(); track character.id) {
+            @if (character.power > 3000) {
+                <li>
+                    <span>{{character.name}}</span>
+                    <strong 
+                        [class.text-danger]="character.power > 9000"
+                        [class.text-primary]="character.power < 9000"
+                        >
+                        ({{character.power}})</strong
+                        >
+                </li>
+            }@else {
+                <li><strong>Aqui no vale la pena ver nada</strong></li>
+            } 
+            }
+        </ul>
